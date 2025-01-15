@@ -1,0 +1,87 @@
+body {
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  .message {
+    font-size: 3em;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 2; 
+  }
+  
+  #confettiButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    z-index: 2; 
+  }
+  
+  #confettiButton:hover {
+    background-color: #ff4500;
+  }
+  
+  #balloonContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1; 
+  }
+  
+  .balloon {
+    position: absolute;
+    bottom: -120px; 
+    width: 80px;
+    height: 120px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: float 10s infinite linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .balloon .string {
+    width: 2px;
+    height: 200px;
+    background-color: #333;
+    position: absolute;
+    bottom: -200px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); } 
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    animation: confettiFall 1.5s ease-out infinite;
+  }
+  
+  @keyframes confettiFall {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }  }
+  
